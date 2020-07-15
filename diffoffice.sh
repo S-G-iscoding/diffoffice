@@ -6,6 +6,8 @@
 #  LibreOffice
 #  diffpdf
 #
+#License: MIT License
+#
 #TODO: Error messages if one of the files is not found.
 #
 #Changelog:
