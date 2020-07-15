@@ -3,7 +3,7 @@ Comparing documents, presentations, spreadsheets and more.
 
 ## How it works
 This small script works under Linux if LibreOffice and DiffPDF is installed.
-It converts a lot of different file formats for documents, presentations, spreadsheets and more to temporary pdf files using LibreOffice as a converter. Then DiffPDF is invoked to show the difference between the two files.
+It converts a lot of different file formats like documents, presentations, spreadsheets and more to temporary pdf files using LibreOffice as a converter. Then DiffPDF is invoked to show the difference between the two files.
 
 ## Installation
 Just download the file diffoffice.sh, make it executable with `chmod +x ./diffoffice.sh` and run it.
