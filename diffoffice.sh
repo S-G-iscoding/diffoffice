@@ -8,13 +8,12 @@
 #
 #License: MIT License
 #
-#TODO: Error messages if one of the files is not found.
-#
 #Changelog:
 #  20200421: Add depenency management
 #  20200421: Bugfix. Now it can deal with space in filenames, too.
 #  20200421: add Help messages
 #  20200715: Use mktemp -d for temp file creation.
+#  20200715: Add error message if file not found with error code 1.
 
 #help
 if [ $# -ne 2 ] ; then 
@@ -37,6 +36,22 @@ fi
 if ! command -v diffpdf >/dev/null 2>&1 ; then
     echo "diffpdf not found. This script needs diffpdf to be installed."
     exit
+fi
+
+#check if files are missing
+fail_because_of_missing_file=0
+
+if ! [[ -f "$1" ]]; then
+    echo "Error: The file $1 does not exist."
+    fail_because_of_missing_file=1
+fi
+if ! [[ -f "$2" ]]; then
+    echo "Error: The file $2 does not exist."
+    fail_because_of_missing_file=1
+fi
+
+if [[ 0 -ne $fail_because_of_missing_file ]]; then
+    exit 1
 fi
 
 #preparation
